@@ -4122,3 +4122,161 @@ span.cac-bold {
     text-align: right;
     margin-top: 10px;
 }
+/* --- Accepted Page Banners --- */
+.accepted-hero {
+    background: linear-gradient(120deg, #163E64 70%, #3498db 100%);
+    color: #fff;
+    padding: 80px 0 60px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+}
+.accepted-hero-overlay {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.accepted-hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.accepted-hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: #e0e0e0;
+}
+.laae-highlight {
+    color: #4FC3F7;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.shadow {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.applicants-list {
+    background: #f9fbfd;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+.applicants-list h2 {
+    color: #163E64;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.applicants-table {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+}
+.applicants-table th, .applicants-table td {
+    text-align: center;
+}
+.applicants-table th {
+    background: #163E64;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.applicants-table td {
+    color: #34495e;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.applicants-table tr:nth-child(even) {
+    background: #f4f8fb;
+}
+.applicants-table tr:hover {
+    background: #e3f2fd;
+    transition: background 0.2s;
+}
+.note {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.accepted-welcome {
+    color: #163E64;
+    font-size: 1.15rem;
+    margin: 30px 0 10px 0;
+    font-weight: 500;
+}
+.next-steps {
+    background: #e3f2fd;
+    border-left: 6px solid #3498db;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin: 30px 0;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+}
+.next-steps h2 {
+    color: #163E64;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.next-steps ol {
+    padding-left: 22px;
+}
+.next-steps li {
+    color: #34495e;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* --- Main Button --- */
+.main-btn {
+    background: linear-gradient(90deg, #3498db 60%, #163E64 100%);
+    color: #fff !important;
+    font-size: 1.1rem;
+    padding: 14px 38px;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    border: none;
+    transition: background 1.6s cubic-bezier(0.4,0,0.2,1), 
+                color 1.6s cubic-bezier(0.4,0,0.2,1), 
+                transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.main-btn:hover {
+    background: linear-gradient(90deg, #163E64 60%, #3498db 100%);
+    transform: translateY(-2px) scale(1.03);
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .accepted-hero h1 {
+        font-size: 2.1rem;
+    }
+    .accepted-hero-subtitle {
+        font-size: 1rem;
+    }
+    .accepted-content {
+        padding: 18px 5px;
+    }
+    .applicants-list {
+        padding: 10px 2px;
+    }
+    .next-steps {
+        padding: 15px 8px;
+    }
+    .main-btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+}
