@@ -63,28 +63,7 @@
             }
         }
 
-        /* Scroll Animation Script */
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Intersection Observer for animations
-                const observerOptions = {
-                    threshold: 0.1
-                };
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
-                    observer.observe(el);
-                });
-            });
-        </script>
     </style>
 </head>
 <body>
@@ -451,4 +430,4 @@
             });
         </script>
 </body>
-</html>
+</html> 
