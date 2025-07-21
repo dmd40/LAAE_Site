@@ -67,13 +67,11 @@ currentImg.addEventListener('click', () => {
     }
 });
 
-// In your main.js or in a script tag
 const acceptedApplicants = [
-    { firstName: "John", lastName: "Doe", grade: "9" },
-    { firstName: "Jane", lastName: "Smith", grade: "10" },
-    // Add more applicants here
+    { firstName: "Bob", lastName: "Marley", grade: "9" },
+    { firstName: "Abraham", lastName: "Lincon", grade: "1776" },
 ];
-
+ 
 function populateApplicantsTable() {
     const tableBody = document.querySelector('.applicants-table tbody');
     tableBody.innerHTML = '';
@@ -91,5 +89,6 @@ function populateApplicantsTable() {
 }
 
 document.addEventListener('DOMContentLoaded', populateApplicantsTable);
+
 
 

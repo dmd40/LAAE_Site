@@ -12,6 +12,80 @@
     <title> LAAE | Student Engineering Program</title>
 
     <link rel="icon" type="image/x-icon" href="img/logos/favicon_laae.jpg">
+    <style>
+        /* Animation Styles Only */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Animation Script */
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Intersection Observer for animations
+                const observerOptions = {
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                    observer.observe(el);
+                });
+            });
+        </script>
+    </style>
 </head>
 <body>
     <!-- Navbar -->    
@@ -103,7 +177,7 @@
 
         <section>
             <div class="home-about-content">
-                <div class="main-header-style">
+                <div class="main-header-style fade-in-up">
                     <div class="main-header-container">
                         <h2>BUILDING A CLEANER AND MORE FUEL<br> EFFICIENT TOMORROW</h2>
 
@@ -111,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="about-style">
+                <div class="about-style fade-in-up">
                     <div class="about-container">
                         <div class="about-content-container">
                             <p>A student-run program that offers high school students opportunities 
@@ -132,20 +206,20 @@
 
         <section>
                 <div class="block-row">
-                    <div class="block-col">
+                    <div class="block-col fade-in-up">
                         <img src = "./img/icons/blockIcon1.jpg" alt="TeamIcon">
                         
                         <a href="pages/family/students.html">OUR TEAM</a>
                     </div>
 
-                    <div class="block-col">
+                    <div class="block-col fade-in-up">
 
                         <img src = "./img/icons/blockIcon2.jpg" alt="ProjectIcon">
 
                         <a href="pages/projects/vehicles.html">VEHICLES</a>
                     </div>
 
-                    <div class="block-col">
+                    <div class="block-col fade-in-up">
 
                         <img src = "./img/icons/blockIcon3.jpg" alt="NewsletterIcon">
 
@@ -160,7 +234,7 @@
         <section>
 
         <div class="apply-img"></div>
-            <div class="apply-container">
+            <div class="apply-container fade-in-up">
                 <div class="apply-dark-overlay">
                     <div class="apply-style">
                         <div class="apply-textbox-container">
@@ -172,7 +246,7 @@
                                 <p>Interested in becoming a member for the class of 2025 - 2026?<br> 
                                     Click here or go to RM-14 for more information!</p>
                             </div>
-                                <a href="pages/apply.html" class="main-btn2">
+                                <a href="pages/applications/apply.html" class="main-btn2">
                                     <p>APPLY FOR NEXT YEAR <i class="fa-solid fa-angle-right"></i></p>
                                 </a>
                         </div>
@@ -187,10 +261,10 @@
             <div class="info-card1">
                 <div class="info-container">
 
-                    <div class="info-style">
+                    <div class="info-style fade-in-left">
                         <div class="info-content">
                             <h2>AWARDS AND <br>ACCOMPLISHMENTS</h2>
-                            <p>Through our team’s hard work and perseverance,
+                            <p>Through our team's hard work and perseverance,
                             they have managed to earn various awards and honors
                             throughout the years.</p>
                         </div>
@@ -200,7 +274,7 @@
                         </a>
 
                     </div>
-                        <img src="./img/home/awards.jpg" alt="CAC Winners">
+                        <img src="./img/home/awards.jpg" alt="CAC Winners" class="fade-in-right">
                 </div>
             </div>
         </section>
@@ -212,9 +286,9 @@
                 <div class="info-projects">
                     <div class="info-container">
 
-                        <img src="./img/curr_projects/legacy_vehicles/pulse.jpeg" alt="CAC Winners">
+                        <img src="./img/curr_projects/legacy_vehicles/pulse.jpeg" alt="CAC Winners" class="fade-in-left">
                         
-                        <div class="info-style">
+                        <div class="info-style fade-in-right">
                             <div class="info-content">
                                 <h2>SOLAR VEHICLE PROJECTS</h2>
                                 <p>In pursuit of a cleaner future for automobiles, LAAE has made over 10 environmental friendly vehicles using solar power and hydrogen-fuel cells</p>
@@ -233,7 +307,7 @@
         <section>
             <div class="info-card1">
                 <div class="home-about-content">
-                    <div class="main-header-style">
+                    <div class="main-header-style fade-in-up">
                         <div class="main-header-container">
                             <h2>MEET THE LAAE FAMILY</h2>
 
@@ -244,7 +318,7 @@
             </div>
             
             <div class="block-img-row">
-                <div class="block-img-col">
+                <div class="block-img-col fade-in-up">
                     <img src = "./img/curr_projects/legacy_vehicles/showcase_vehicle.jpeg" alt="Alumni_img">
                         <div class="block-img-overlay">
                             <h2>ALUMNI</h2>
@@ -255,7 +329,7 @@
                         </div>
                 </div>
 
-                <div class="block-img-col">
+                <div class="block-img-col fade-in-up">
                     <img src = "./img/home/block2.jpg" alt="Student_img">
                         <div class="block-img-overlay">
                             <h2>STUDENTS</h2>
@@ -266,7 +340,7 @@
                         </div>
                 </div>
 
-                <div class="block-img-col">
+                <div class="block-img-col fade-in-up">
                     <img src = "./img/home/block3.jpg" alt="Sponsors_img">
                         <div class="block-img-overlay">
                             <h2>SPONSORS</h2>
@@ -280,12 +354,12 @@
         </section>
 
         <footer>
-            <div class="footer-logo-container">
+            <div class="footer-logo-container fade-in-up">
                 <img src="img/logos/laae_main_logo.png" alt="LAAE Logo">
             </div>
             
             <div class="footer-content-row">
-                <div class="footer-content-col">
+                <div class="footer-content-col fade-in-up">
                     <h1>REACH US</h1>
 
                     <div class="style-line2"></div>
@@ -305,7 +379,7 @@
                     </div>
                 </div>
 
-                <div class="footer-content-col">
+                <div class="footer-content-col fade-in-up">
                     <h1>HELPFUL LINKS</h1>
 
                     <div class="style-line2"></div>
@@ -331,7 +405,7 @@
                     </div>
                 </div>
 
-                <div class="footer-content-col">
+                <div class="footer-content-col fade-in-up">
                     <h1>CONNECT WITH US</h1>
 
                     <div class="style-line2"></div>
@@ -350,10 +424,31 @@
                 </div>
             </div>
         </footer>
-        <div class="copyright">
-            <p>Los Altos Academy of Engineering | Copyright 2022 | Website Created by the LAAE IT Team</p>
+        <div class="copyright fade-in-up">
+            <p>Los Altos Academy of Engineering | Copyright 2025 | Website Created by the LAAE IT Team</p>
         </div>
 
         <script src="scripts/main.js"></script>
+        <script>
+            // Animation Script // Remove if not needed
+            document.addEventListener('DOMContentLoaded', function() {
+                const observerOptions = {
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                    observer.observe(el);
+                });
+            });
+        </script>
 </body>
 </html>
