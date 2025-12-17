@@ -387,7 +387,9 @@ img {
 .showcase-img {
     margin-top: 70px;
     display: block;
-    height: 720px;
+    /* Fill the viewport minus the fixed navbar (70px). Use a sensible minimum height for very small screens. */
+    height: calc(100vh - 70px);
+    min-height: 270px;
     background-image: url('../img/home/newHomeShowcase conv.jpeg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -405,7 +407,8 @@ img {
     background: rgb(0,0,0);
     background: rgba(0,0,0,0.5);
     width: 100%;
-    height: 720px;
+    /* match the parent container height so the overlay always covers the showcase */
+    height: 100%;
 }
 
 .info-header-container {
@@ -436,12 +439,14 @@ img {
 
 @media screen and (max-width: 1300px) {
     .showcase-img{
-        height: 448px;
+        /* keep filling viewport but allow a smaller visual height on narrower screens */
+        height: calc(100vh - 70px);
+        min-height: 320px;
         margin-top: 60px;
     }
 
     .dark-overlay {
-        height: 448px;
+        height: 100%;
     }
 
     .text-box h1 {
@@ -459,12 +464,13 @@ img {
 
 @media screen and (max-width: 900px) {
     .showcase-img{
-        height: 350px;
+        height: calc(100vh - 70px);
+        min-height: 300px;
         margin-top: 60px;
     }
 
     .dark-overlay {
-        height: 350px;
+        height: 100%;
     }
 
     .text-box h1 {
@@ -478,12 +484,13 @@ img {
 
 @media screen and (max-width: 500px) {
     .showcase-img{
-        height: 270px;
+        height: calc(100vh - 70px);
+        min-height: 240px;
         margin-top: 60px;
     }
 
     .dark-overlay {
-        height: 270px;
+        height: 100%;
     }
 
     .info-header-container {
