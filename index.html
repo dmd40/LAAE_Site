@@ -134,7 +134,20 @@
             
 <!-- Showcase Images Placeholder ONLY -->
 <div class="showcase-container">
-    <div class="showcase-img"></div>
+    <div class="showcase-slides" role="region" aria-roledescription="carousel" aria-label="LAAE highlights">
+        <div class="showcase-img showcase-slide is-active"
+            style="background-image: url('img/home/newHomeShowcase conv.jpeg');"
+            role="img" aria-label="Electric vehicle frames in the LAAE workshop"></div>
+        <div class="showcase-img showcase-slide"
+            style="background-image: url('img/home/home_showcase.JPG');"
+            role="img" aria-label="Los Altos Academy of Engineering workshop"></div>
+        <div class="showcase-img showcase-slide"
+            style="background-image: url('img/home/block2.jpg');"
+            role="img" aria-label="LAAE team with competition vehicles"></div>
+        <div class="showcase-img showcase-slide"
+            style="background-image: url('img/home/apply.jpg');"
+            role="img" aria-label="LAAE students receiving project instructions"></div>
+    </div>
     <div class="dark-overlay">
         <div class="info-header-container">
             <div class="text-box">
@@ -152,6 +165,18 @@
             </div>
         </div>
     </div>
+    <div class="showcase-controls" aria-label="Slideshow controls">
+        <button type="button" class="showcase-control showcase-prev" aria-label="Previous image">
+            <span aria-hidden="true">&#10094;</span>
+        </button>
+        <button type="button" class="showcase-control showcase-toggle" aria-label="Pause slideshow" aria-pressed="false">
+            <span class="showcase-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="showcase-control showcase-next" aria-label="Next image">
+            <span aria-hidden="true">&#10095;</span>
+        </button>
+    </div>
+    <p class="showcase-status visually-hidden" aria-live="polite" aria-atomic="true"></p>
 </div>
 
         <section>
@@ -222,7 +247,7 @@
 
                                 <div class="style-line"></div>
 
-                                <p>Interested in becoming a member for the class of 2025 - 2026?<br> 
+                                <p>Interested in becoming a member for the class of 2026 - 2027?<br>
                                     Click here or go to RM-14 for more information!</p>
                             </div>
                                 <a href="/pages/applications/apply.html" class="main-btn2">
@@ -408,6 +433,7 @@
         </div>
 
         <script src="scripts/main.js"></script>
+        <script src="scripts/home-carousel.js"></script>
         <script>
             // this is intersection observer for the animation actions
             document.addEventListener('DOMContentLoaded', function() {
@@ -430,4 +456,4 @@
             });
         </script>
 </body>
-</html> 
+</html>

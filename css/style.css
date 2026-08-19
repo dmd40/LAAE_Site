@@ -384,16 +384,31 @@ img {
 
 /* ==== Showcase and Textbox Placeholder ONLY ==== */
 
-.showcase-img {
+.showcase-slides {
+    position: relative;
     margin-top: 70px;
-    display: block;
-    /* Fill the viewport minus the fixed navbar (70px). Use a sensible minimum height for very small screens. */
     height: calc(100vh - 70px);
     min-height: 270px;
-    background-image: url('../img/home/newHomeShowcase conv.jpeg');
+    overflow: hidden;
+    background-color: #163E64;
+}
+
+.showcase-img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 0;
+    transform: scale(1.015);
+    transition: opacity 0.8s ease, transform 6s ease;
+}
+
+.showcase-img.is-active {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .showcase-container {
@@ -409,6 +424,104 @@ img {
     width: 100%;
     /* match the parent container height so the overlay always covers the showcase */
     height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.dark-overlay a {
+    pointer-events: auto;
+}
+
+.showcase-controls {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    width: 152px;
+    gap: 10px;
+}
+
+.showcase-control {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.48);
+    color: white;
+    font: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.showcase-control:hover,
+.showcase-control:focus-visible {
+    background: #0096FB;
+    transform: translateY(-2px);
+}
+
+.showcase-control:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+.showcase-toggle-icon {
+    position: relative;
+    width: 14px;
+    height: 16px;
+}
+
+.showcase-toggle-icon::before,
+.showcase-toggle-icon::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    width: 4px;
+    height: 14px;
+    border-radius: 1px;
+    background: currentColor;
+}
+
+.showcase-toggle-icon::before {
+    left: 1px;
+}
+
+.showcase-toggle-icon::after {
+    right: 1px;
+}
+
+.showcase-toggle.is-paused .showcase-toggle-icon::before {
+    top: 0;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid currentColor;
+    border-radius: 0;
+    background: transparent;
+}
+
+.showcase-toggle.is-paused .showcase-toggle-icon::after {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .info-header-container {
@@ -438,7 +551,7 @@ img {
 /* Media Querry Showcase */
 
 @media screen and (max-width: 1300px) {
-    .showcase-img{
+    .showcase-slides {
         /* keep filling viewport but allow a smaller visual height on narrower screens */
         height: calc(100vh - 70px);
         min-height: 320px;
@@ -463,7 +576,7 @@ img {
 /* Media Querry Mobile Showcase */
 
 @media screen and (max-width: 900px) {
-    .showcase-img{
+    .showcase-slides {
         height: calc(100vh - 70px);
         min-height: 300px;
         margin-top: 60px;
@@ -483,7 +596,7 @@ img {
 }
 
 @media screen and (max-width: 500px) {
-    .showcase-img{
+    .showcase-slides {
         height: calc(100vh - 70px);
         min-height: 240px;
         margin-top: 60px;
@@ -514,6 +627,27 @@ img {
 
     .style-line-right {
         display: none;
+    }
+
+    .showcase-controls {
+        right: 14px;
+        bottom: 14px;
+        grid-template-columns: repeat(3, 38px);
+        width: 128px;
+        gap: 7px;
+    }
+
+    .showcase-control {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showcase-img,
+    .showcase-control {
+        transition: none;
     }
 }
 
@@ -1795,6 +1929,23 @@ footer {
     object-fit: cover;
 }
 
+.team-item img.leadership-team-image {
+    display: block;
+    width: 130%;
+    max-width: 100%;
+    object-position: center 25%;
+}
+
+.team-item.leadership-team-item {
+    width: 70%;
+    height: 480px;
+    justify-self: center;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
 @media screen and (max-width: 1350px) {
     .teams-container {
         display: grid;
@@ -1817,6 +1968,10 @@ footer {
         grid-column: span 2;
         grid-row: 7;
         height: 270px;
+    }
+
+    .team-item.leadership-team-item {
+        height: 340px;
     }
 }
 
@@ -2310,6 +2465,10 @@ footer {
     height: 350px;
     width: 100%;
     object-fit: cover;
+}
+
+.team-img-container img.team-img-focus-up {
+    object-position: center 40%;
 }
 
 .team-header-container {
@@ -4294,5 +4453,4 @@ span.cac-bold {
     font-size: 2.2em;
     font-weight: bold;
     letter-spacing: 1px;
-}   
- 
+}
